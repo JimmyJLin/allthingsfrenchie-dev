@@ -1,0 +1,29 @@
+#main_header{
+
+  #navbar{
+
+    a{
+      background-image: none;
+      background-color: transparent;
+      box-shadow: none;
+      color: #444;
+    }
+    a:hover{
+      color: #23527c;
+    }
+
+    .container{
+      padding: 15px 0;
+    }
+
+    .navbar-brand{
+      padding: 0 15px;
+    }
+
+    #logo{
+      height: 100%;
+      width: auto;
+    }
+  }
+
+}
