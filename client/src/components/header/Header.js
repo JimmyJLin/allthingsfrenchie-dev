@@ -14,7 +14,7 @@ const Header = () => {
           FREE SHIPPING on orders over $35 / Subscribe to our newsletter for 15% OFF
         </p>
       </div> */}
-      <Navbar id="navbar" collapseOnSelect fixedTop={true}>
+      <Navbar id="navbar" collapseOnSelect fixedTop={true}  className="container-fluid">
         <Navbar.Header>
           <Navbar.Brand>
             <Link to={'/'}>

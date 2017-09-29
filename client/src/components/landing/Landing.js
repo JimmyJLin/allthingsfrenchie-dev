@@ -7,7 +7,7 @@ import MultiCards from '../carousel/MultiCards';
 class Landing extends Component {
   render(){
     return (
-      <div id="landing" className="container">
+      <div id="landing">
         <Carousel />
         <MultiCards />
 
