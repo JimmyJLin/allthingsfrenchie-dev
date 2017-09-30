@@ -1,13 +1,31 @@
 @import '../variables';
+#footer, #shipping, #returnAndExchange {
+  .main_title{
+    font-weight: bold;
+    text-align: center;
+  }
+  .title{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+
+  p{
+    padding: 7px 0;
+  }
+
+}
+
+#shipping, #returnAndExchange{
+  padding-bottom: 50px;
+}
 
 #footer {
   padding-top: 50px;
+  padding-bottom: 60px;
+  background-color: #fafafa;
 
   #links_container{
-    .title{
-      text-transform: uppercase;
-      font-weight: bold;
-    }
     padding-top: 10px;
     ul{
       padding-left: 0px;
@@ -37,4 +55,56 @@
       }
     }
   }
+}
+
+#shipping {
+  margin: 0 40px;
+  table {
+    width: 100%;
+    border: solid 1px #ebebeb;
+  }
+  h2, th{
+    text-align: center;
+  }
+  td, tr {
+    padding: 12px;
+  }
+  td{
+    height: 42px;
+  }
+  tr{
+    height: 62px;
+  }
+  p{
+    text-align: left;
+  }
+  .title{
+    padding-top: 25px;
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 1.25em;
+  }
+  #colored{
+    background-color: #fafafa;
+  }
+  .domestic, .international{
+    text-align: center;
+    word-wrap: break-word;
+  }
+  .domestic{
+
+    #text_bold{
+      font-weight: bold;
+    }
+    #red_text{
+      color: #ff0000;
+    }
+  }
+}
+
+#returnAndExchange{
+ #center_bold{
+   text-align: center;
+   font-weight: bold;
+ }
 }
