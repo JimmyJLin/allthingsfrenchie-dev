@@ -5,7 +5,9 @@ import Carousel from '../carousel/Carousel';
 import MultiCards from '../carousel/MultiCards';
 
 class Landing extends Component {
+
   render(){
+
     return (
       <div id="landing">
         <Carousel />

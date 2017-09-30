@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import './App.css';
-
-// component imports
-// import ScrollToTop from './utils/ScrollToTop';
 
 import Header from './header/Header';
 import Landing from './landing/Landing';
@@ -25,6 +24,10 @@ import Socks from './shop/socks/Socks';
 import Women from './shop/women/Women';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchNewArrivals();
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -52,4 +55,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, actions)(App);

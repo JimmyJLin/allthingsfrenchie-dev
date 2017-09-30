@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import Sliders from 'react-slick';
+import { connect } from 'react-redux';
 
 import './_multicards.scss'
-import multiOne from './images/multi-1.jpg'
-import multiTwo from './images/multi-2.png'
-import multiThree from './images/multi-3.jpg'
-import multiFour from './images/multi-4.jpeg'
-import multiFive from './images/multi-5.jpg'
 
 function NextArrow(props) {
   const {className, onClick} = props
@@ -29,9 +25,32 @@ function PrevArrow(props) {
     ></div>
   );
 }
+
 class MultiCards extends Component {
 
+  renderCards(){
+    // const cardData = this.props.newArrivals
+    if (!this.props.newArrivals) {
+      return null
+    } else {
+      return this.props.newArrivals.map(({product_id, title, images, variants }) => {
+        return (
+          <div key={product_id} id="multi_card_container">
+            <div id="multi_card_img">
+              <img src={images[0].src} alt=""/>
+            </div>
+            <div id="multi_card_body">
+              <h4>{title}</h4>
+              <p>{variants[0].price}</p>
+            </div>
+          </div>
+        )
+      })
+    }
+  }
+
   render(){
+
     const settings ={
       dots: true,
       infinite: true,
@@ -70,55 +89,16 @@ class MultiCards extends Component {
         <h2 id="title">New Arrivals</h2>
         <Sliders {...settings}>
 
-          <div id="multi_card_container">
-            <div id="multi_card_img">
-              <img src={multiOne} alt=""/>
-            </div>
-            <div id="multi_card_body">
-              <h4>BABETTE FRENCH BULLDOG EARRINGS</h4>
-              <p>$22.00</p>
-            </div>
-          </div>
-          <div id="multi_card_container">
-            <div id="multi_card_img">
-              <img src={multiTwo} alt=""/>
-            </div>
-            <div id="multi_card_body">
-              <h4>BAILEY THE FRENCH BULLDOG SCARF</h4>
-              <p>$25.00</p>
-            </div>
-          </div>
-          <div id="multi_card_container">
-            <div id="multi_card_img">
-              <img src={multiThree} alt=""/>
-            </div>
-            <div id="multi_card_body">
-              <h4>ORIGAMI FRENCHIE TOTEBAG</h4>
-              <p>$22.00</p>
-            </div>
-          </div>
-          <div id="multi_card_container">
-            <div id="multi_card_img">
-              <img src={multiFour} alt=""/>
-            </div>
-            <div id="multi_card_body">
-              <h4>ADORE-A-BULL NECKLACE</h4>
-              <p>$25.00</p>
-            </div>
-          </div>
-          <div id="multi_card_container">
-            <div id="multi_card_img">
-              <img src={multiFive} alt=""/>
-            </div>
-            <div id="multi_card_body">
-              <h4>PRESS PAWS RING</h4>
-              <p>$20.00</p>
-            </div>
-          </div>
+          {this.renderCards()}
+
         </Sliders>
       </div>
     );
   }
 };
 
-export default MultiCards;
+function mapStateToProps({ newArrivals }) {
+  return { newArrivals }
+}
+
+export default connect(mapStateToProps)(MultiCards);
