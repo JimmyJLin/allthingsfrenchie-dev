@@ -5,6 +5,8 @@ const app = express()
 
 app.use(bodyParser.json());
 
+require('./routes/shopifyRoutes')(app);
+
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
