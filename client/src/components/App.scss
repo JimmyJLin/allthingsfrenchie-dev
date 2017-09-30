@@ -2,10 +2,20 @@
 @import 'variables';
 
 // component imports
-@import 'landing/landing';
-@import 'header/header';
+@import 'blog/blog';
 @import 'carousel/carousel';
 @import 'carousel/multicards';
+@import 'events/events';
+@import 'footer/footer';
+@import 'header/header';
+@import 'landing/landing';
+@import 'shop/bags_accessories/bags_accessories';
+@import 'shop/jewelry/jewelry';
+@import 'shop/men/men';
+@import 'shop/sales/sales';
+@import 'shop/socks/socks';
+@import 'shop/women/women';
+
 
 // global css
 body{

@@ -25,32 +25,30 @@ const Header = () => {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer to={'/'}>
-              <NavItem eventKey={1} href="#">HOWLOWEEN SHOP</NavItem>
+            <LinkContainer to={'/howloween'}>
+              <NavItem eventKey={1}>HOWLOWEEN SHOP</NavItem>
             </LinkContainer>
-            <LinkContainer to={'/'}>
-              <NavDropdown eventKey={2} title="SHOP" id="basic-nav-dropdown">
-                <LinkContainer to={'/'}>
-                  <MenuItem eventKey={2.1}>WOMEN</MenuItem>
-                </LinkContainer>
-                <LinkContainer to={'/'}>
-                  <MenuItem eventKey={2.2}>MEN</MenuItem>
-                </LinkContainer>
-                <LinkContainer to={'/'}>
-                  <MenuItem eventKey={2.3}>BAGS & ACCESSORIES</MenuItem>
-                </LinkContainer>
-                <LinkContainer to={'/'}>
-                  <MenuItem eventKey={2.4}>JEWELRY</MenuItem>
-                </LinkContainer>
-                <LinkContainer to={'/'}>
-                  <MenuItem eventKey={2.5}>SOCKS</MenuItem>
-                </LinkContainer>
-                <LinkContainer to={'/'}>
-                  <MenuItem eventKey={2.6}>SALES</MenuItem>
-                </LinkContainer>
-              </NavDropdown>
-            </LinkContainer>
-            <LinkContainer to={'/'}>
+            <NavDropdown eventKey={2} title="SHOP" id="basic-nav-dropdown">
+              <LinkContainer to={'/shop/women'}>
+                <MenuItem eventKey={2.1}>WOMEN</MenuItem>
+              </LinkContainer>
+              <LinkContainer to={'/shop/men'}>
+                <MenuItem eventKey={2.2}>MEN</MenuItem>
+              </LinkContainer>
+              <LinkContainer to={'/shop/bags_and_accessories'}>
+                <MenuItem eventKey={2.3}>BAGS & ACCESSORIES</MenuItem>
+              </LinkContainer>
+              <LinkContainer to={'/shop/jewelry'}>
+                <MenuItem eventKey={2.4}>JEWELRY</MenuItem>
+              </LinkContainer>
+              <LinkContainer to={'/shop/socks'}>
+                <MenuItem eventKey={2.5}>SOCKS</MenuItem>
+              </LinkContainer>
+              <LinkContainer to={'/shop/sales'}>
+                <MenuItem eventKey={2.6}>SALES</MenuItem>
+              </LinkContainer>
+            </NavDropdown>
+            <LinkContainer to={'/be_a_pup_star'}>
               <NavItem eventKey={3}>BE A PUP STAR</NavItem>
             </LinkContainer>
 
