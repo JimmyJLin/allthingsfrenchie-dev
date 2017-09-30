@@ -11,6 +11,12 @@ import Landing from './landing/Landing';
 import Blog from './blog/Blog';
 import Events from './events/Events';
 import Footer from './footer/Footer';
+import Faq from './footer/Faq';
+import Privacy from './footer/Privacy';
+import ReturnAndExchange from './footer/ReturnAndExchange';
+import Search from './footer/Search';
+import Shipping from './footer/Shipping';
+import TermsOfService from './footer/TermsOfService';
 import BagsAndAccessories from './shop/bags_accessories/BagsAndAccessories';
 import Jewelry from './shop/jewelry/Jewelry';
 import Men from './shop/men/Men';
@@ -33,6 +39,12 @@ class App extends Component {
           <Route exact path="/shop/sales" component={Sales}/>
           <Route exact path="/shop/socks" component={Socks}/>
           <Route exact path="/shop/women" component={Women}/>
+          <Route exact path="/faq" component={Faq}/>
+          <Route exact path="/privacy" component={Privacy}/>
+          <Route exact path="/returns_exchange" component={ReturnAndExchange}/>
+          <Route exact path="/search" component={Search}/>
+          <Route exact path="/shipping" component={Shipping}/>
+          <Route exact path="/terms_of_service" component={TermsOfService}/>
           <Footer />
         </div>
       </BrowserRouter>
