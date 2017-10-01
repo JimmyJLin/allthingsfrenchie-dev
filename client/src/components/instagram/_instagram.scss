@@ -1,0 +1,68 @@
+@import '../variables';
+
+#instagram{
+  padding-bottom: 50px;
+
+  h2{
+    text-align: center;
+    padding-bottom: 25px;
+  }
+
+  #mobile_view{
+    display: none;
+    @include small{
+      display: block;
+    }
+    @include medium{
+      display: block;
+    }
+    @include large{
+      display: block;
+    }
+    @include ipad{
+      display: block;
+    };
+  }
+
+  #large_view{
+    display: none;
+    @include ipad-pro{
+      display: block;
+    };
+    @include desktop{
+      display: block;
+    }
+  }
+
+  #insta_frame{
+    padding-left: 0px;
+    padding-bottom: 25%;
+    padding-right: 23%;
+    overflow: hidden;
+    position: relative;
+    @include small{
+      padding-bottom: 100%;
+      padding-right: 100%;
+    }
+    @include medium{
+      padding-bottom: 100%;
+      padding-right: 100%;
+    }
+    @include large{
+      padding-bottom: 100%;
+      padding-right: 100%;
+    }
+    @include ipad{
+      padding-bottom: 32%;
+      padding-right: 32%;
+    }
+  }
+
+  #insta_img{
+    position: absolute;
+    padding: 5px 5px;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}

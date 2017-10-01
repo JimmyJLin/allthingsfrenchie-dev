@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Sliders from 'react-slick';
-import _ from 'lodash';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
@@ -56,7 +55,8 @@ class MultiCards extends Component {
   renderCards(){
     const newArray = this.removeDuplicates(this.props.newArrivals, 'product_id')
 
-    console.log("uniquData", newArray);
+    // console.log(newArray)
+
     return newArray.map(({product_id, title, images, variants }) => {
       return (
         <div key={product_id} id="multi_card_container">

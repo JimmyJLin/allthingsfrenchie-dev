@@ -8,7 +8,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div id="footer">
+      <div id="footer" className="container-fluid">
         <Grid>
           <Row className="show-grid">
             <Col xs={18} sm={4} md={4}>

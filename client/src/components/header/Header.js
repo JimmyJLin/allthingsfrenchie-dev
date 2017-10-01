@@ -8,7 +8,7 @@ import logo from './images/logo.png';
 
 const Header = () => {
   return (
-    <div id="main_header">
+    <div id="main_header" className="container-fluid">
       {/* <div id="header_message">
         <p>
           FREE SHIPPING on orders over $35 / Subscribe to our newsletter for 15% OFF
