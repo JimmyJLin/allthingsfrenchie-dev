@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Sliders from 'react-slick';
+import _ from 'lodash';
 import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 import './_multicards.scss'
 
@@ -28,25 +30,46 @@ function PrevArrow(props) {
 
 class MultiCards extends Component {
 
-  renderCards(){
-    // const cardData = this.props.newArrivals
-    if (!this.props.newArrivals) {
-      return null
-    } else {
-      return this.props.newArrivals.map(({product_id, title, images, variants }) => {
-        return (
-          <div key={product_id} id="multi_card_container">
-            <div id="multi_card_img">
-              <img src={images[0].src} alt=""/>
-            </div>
-            <div id="multi_card_body">
-              <h4>{title}</h4>
-              <p>{variants[0].price}</p>
-            </div>
-          </div>
-        )
-      })
+  componentDidMount() {
+    this.props.fetchNewArrivals();
+  }
+
+  removeDuplicates(originalArray, objKey) {
+    var trimmedArray = [];
+    var values = [];
+    var value;
+
+    for(var i = 0; i < originalArray.length; i++) {
+      value = originalArray[i][objKey];
+
+      if(values.indexOf(value) === -1) {
+        trimmedArray.push(originalArray[i]);
+        values.push(value);
+      }
     }
+
+    return trimmedArray;
+
+  }
+
+
+  renderCards(){
+    const newArray = this.removeDuplicates(this.props.newArrivals, 'product_id')
+
+    console.log("uniquData", newArray);
+    return newArray.map(({product_id, title, images, variants }) => {
+      return (
+        <div key={product_id} id="multi_card_container">
+          <div id="multi_card_img">
+            <img src={images[0].src} alt=""/>
+          </div>
+          <div id="multi_card_body">
+            <h4>{title}</h4>
+            <p>{variants[0].price}</p>
+          </div>
+        </div>
+      )
+    })
   }
 
   render(){
@@ -101,4 +124,4 @@ function mapStateToProps({ newArrivals }) {
   return { newArrivals }
 }
 
-export default connect(mapStateToProps)(MultiCards);
+export default connect(mapStateToProps, actions)(MultiCards);

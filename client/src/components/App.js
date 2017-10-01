@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
 
 import './App.css';
 
@@ -24,9 +22,6 @@ import Socks from './shop/socks/Socks';
 import Women from './shop/women/Women';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchNewArrivals();
-  }
 
   render() {
     return (
@@ -55,4 +50,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+export default App;
