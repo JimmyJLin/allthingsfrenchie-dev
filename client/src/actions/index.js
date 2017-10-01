@@ -12,7 +12,7 @@ export const fetchNewArrivals = () => async dispatch => {
 
 export const fetchNewInstagramFeeds = () => async dispatch => {
 
-  const res = await axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=2220345295.aaaced0.d8319c47df1646e19ec4824e53e673d9');
+  const res = await axios.get('/api/instagram/feeds');
 
   console.log(res)
 
