@@ -31,6 +31,7 @@ module.exports = app => {
   app.get('/api/shopify/collections', async (req, res) => {
     await shopify.smartCollection.list()
       .then((data) => {
+        smartCollection = [];
         data.forEach((collection) => {
           smartCollection.push(collection);
         });
@@ -48,6 +49,7 @@ module.exports = app => {
       collection_id: currentCollectons[0].id
     })
       .then((data) => {
+        womenCollection = [];
         data.forEach((collection) => {
           womenCollection.push(collection);
         });
@@ -65,6 +67,7 @@ module.exports = app => {
       collection_id: currentCollectons[1].id
     })
       .then((data) => {
+        menCollection = [];
         data.forEach((collection) => {
           menCollection.push(collection);
         });
@@ -82,6 +85,7 @@ module.exports = app => {
       collection_id: currentCollectons[2].id
     })
       .then((data) => {
+        jewelryCollection = [];
         data.forEach((collection) => {
           jewelryCollection.push(collection);
         });
@@ -99,6 +103,7 @@ module.exports = app => {
       collection_id: currentCollectons[3].id
     })
       .then((data) => {
+        bagAndAccessoriesCollection = [];
         data.forEach((collection) => {
           bagAndAccessoriesCollection.push(collection);
         });
@@ -116,6 +121,7 @@ module.exports = app => {
       collection_id: currentCollectons[4].id
     })
       .then((data) => {
+        socksCollection = [];
         data.forEach((collection) => {
           socksCollection.push(collection);
         });
@@ -133,6 +139,7 @@ module.exports = app => {
       collection_id: currentCollectons[5].id
     })
       .then((data) => {
+        salesCollection = [];
         data.forEach((collection) => {
           salesCollection.push(collection);
         });
@@ -150,6 +157,7 @@ module.exports = app => {
       collection_id: currentCollectons[6].id
     })
       .then((data) => {
+        newArrivalCollection = [];
         data.forEach((collection) => {
           newArrivalCollection.push(collection);
         });
