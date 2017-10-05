@@ -3,6 +3,8 @@ import Sliders from 'react-slick';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
+import Product from '../utils/product/Product';
+
 import './_multicards.scss'
 
 function NextArrow(props) {
@@ -55,8 +57,6 @@ class MultiCards extends Component {
   renderCards(){
     const newArray = this.removeDuplicates(this.props.newArrivals, 'product_id')
 
-    // console.log(newArray)
-
     return newArray.map(({product_id, title, images, variants }) => {
       return (
         <div key={product_id} id="multi_card_container">
@@ -70,6 +70,7 @@ class MultiCards extends Component {
         </div>
       )
     })
+
   }
 
   render(){
