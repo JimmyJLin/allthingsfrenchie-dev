@@ -14,7 +14,7 @@ export const fetchNewInstagramFeeds = () => async dispatch => {
 
   const res = await axios.get('/api/instagram/feeds');
 
-  console.log(res)
+  // console.log(res)
 
   dispatch({ type: FETCH_NEW_FEEDS, payload: res.data });
 }

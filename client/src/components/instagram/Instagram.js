@@ -31,7 +31,7 @@ class Instagram extends Component {
   renderFeeds() {
     // const newArray = this.removeDuplicates(this.props.instagram.data, 'id')
     const instaData = this.props.instagram.data
-    console.log('instagramData:', instaData)
+    // console.log('instagramData:', instaData)
 
     if(!instaData) {
       return
@@ -49,7 +49,7 @@ class Instagram extends Component {
   renderMobileFeeds() {
     // const newArray = this.removeDuplicates(this.props.instagram.data, 'id')
     const instaData = this.props.instagram.data
-    console.log('instagramData:', instaData)
+    // console.log('instagramData:', instaData)
 
     if(!instaData) {
       return
